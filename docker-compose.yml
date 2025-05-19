@@ -1,0 +1,22 @@
+services:
+  api:
+    build: ./
+    container_name: api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    container_name: wallets
+    environment:
+      POSTGRES_PASSWORD: 55555
+      POSTGRES_DB: wallets
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
