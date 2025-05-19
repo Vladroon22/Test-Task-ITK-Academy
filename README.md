@@ -21,3 +21,7 @@ and
 ```
 make bench-get
 ```
+
+![bench-results-post](assets/post-bench.png)
+
+![bench-results-get](assets/get-bench.png)
