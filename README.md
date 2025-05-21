@@ -16,6 +16,7 @@ make mig-up
 GET /api/v1/wallet/{wallet-uuid}
 ```
 
+<b>Response<b>
 ```
 {
     "balance": 1142171.82,
@@ -30,6 +31,7 @@ GET /api/v1/wallet/{wallet-uuid}
 POST /api/v1/wallet/
 ```
 
+<b>Request<b>
 ```
 {
     "balance": 1000.82,
