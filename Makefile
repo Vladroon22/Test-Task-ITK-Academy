@@ -6,7 +6,8 @@ compose-down:
 	docker-compose down -v
 
 tests:
-
+	go test ./internal/tests/
+	go test ./internal/entity/
 
 migs-up:
 	goose up
