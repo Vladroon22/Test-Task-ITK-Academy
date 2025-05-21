@@ -14,18 +14,17 @@ func TestValidateUserInput(t *testing.T) {
 		expected    WalletData
 		expectedErr error
 	}{
-		// Valid cases
 		{
 			name: "valid deposit operation",
 			input: WalletData{
 				Uuid:           "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
 				Balance:        100.123,
-				Operation_type: "DEPOSIT", // Test case insensitivity
+				Operation_type: "DEPOSIT",
 			},
 			expected: WalletData{
 				Uuid:           "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
-				Balance:        100.12,    // Rounded to 2 decimal places
-				Operation_type: "deposit", // Lowercased
+				Balance:        100.12,
+				Operation_type: "deposit",
 			},
 			expectedErr: nil,
 		},
@@ -58,7 +57,6 @@ func TestValidateUserInput(t *testing.T) {
 			expectedErr: nil,
 		},
 
-		// Invalid operation types
 		{
 			name: "invalid operation type",
 			input: WalletData{
@@ -80,7 +78,6 @@ func TestValidateUserInput(t *testing.T) {
 			expectedErr: errors.New("invalid operation"),
 		},
 
-		// Edge cases
 		{
 			name: "negative balance",
 			input: WalletData{
